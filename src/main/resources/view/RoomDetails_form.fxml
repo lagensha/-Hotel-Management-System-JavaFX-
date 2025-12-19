@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFA239;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.customer.controller.RoomDetails_form_controller">
+   <children>
+      <Label layoutX="214.0" layoutY="14.0" prefHeight="35.0" prefWidth="190.0" text="Room Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblRoomDetails" layoutY="74.0" prefHeight="252.0" prefWidth="607.0">
+        <columns>
+          <TableColumn fx:id="colRoomId" prefWidth="117.5" text="Room Id" />
+          <TableColumn fx:id="colCustomerId" prefWidth="118.0" text="Customer Id" />
+            <TableColumn fx:id="colCustomerName" prefWidth="165.0" text="Customer Name" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="205.5" text="Customer Phone Number" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnRest" layoutX="495.0" layoutY="356.0" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="30.0" prefWidth="84.0" text="Reset" />
+   </children>
+</AnchorPane>
