@@ -14,7 +14,11 @@ public class login_form_controller {
     public PasswordField txtPassword;
     Stage stage = new Stage();
     public void btnLogonOnAction(ActionEvent actionEvent) {
+        String username= txtUserName.getText();
+        String password= txtPassword.getText();
+        if(username.equals("Admin@123")){
 
+        }
         try {
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Customer_login_form.fxml"))));
         } catch (IOException e) {

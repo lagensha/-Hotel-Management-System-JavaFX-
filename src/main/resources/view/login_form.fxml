@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FF9B00;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.customer.controller.login_form_controller">
    <children>
       <ImageView fitHeight="400.0" fitWidth="269.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
@@ -37,7 +36,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="txtUserName" layoutX="393.0" layoutY="105.0" prefHeight="25.0" prefWidth="194.0" />
-      <PasswordField fx:id="txtPassword" layoutX="400.0" layoutY="205.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField fx:id="txtUserName" layoutX="393.0" layoutY="105.0" prefHeight="25.0" prefWidth="194.0" promptText="username" />
+      <PasswordField fx:id="txtPassword" layoutX="400.0" layoutY="205.0" prefHeight="25.0" prefWidth="166.0" promptText="password" />
    </children>
 </AnchorPane>

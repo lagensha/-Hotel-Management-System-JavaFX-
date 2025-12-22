@@ -4,17 +4,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFA239;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.customer.controller.RoomDetails_form_controller">
+<AnchorPane prefHeight="439.0" prefWidth="613.0" style="-fx-background-color: #FFA239;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.customer.controller.RoomDetails_form_controller">
    <children>
       <Label layoutX="214.0" layoutY="14.0" prefHeight="35.0" prefWidth="190.0" text="Room Details" textFill="WHITE">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <TableView fx:id="tblRoomDetails" layoutY="74.0" prefHeight="252.0" prefWidth="607.0">
+      <TableView fx:id="tblRoomDetails" layoutX="6.0" layoutY="187.0" onSort="#tblRoomDetailsOnSort" prefHeight="252.0" prefWidth="607.0">
         <columns>
           <TableColumn fx:id="colRoomId" prefWidth="117.5" text="Room Id" />
           <TableColumn fx:id="colCustomerId" prefWidth="118.0" text="Customer Id" />
@@ -22,6 +23,13 @@
             <TableColumn fx:id="colPhoneNumber" prefWidth="205.5" text="Customer Phone Number" />
         </columns>
       </TableView>
-      <Button fx:id="btnRest" layoutX="495.0" layoutY="356.0" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="30.0" prefWidth="84.0" text="Reset" />
+      <Button fx:id="btnRest" layoutX="488.0" layoutY="144.0" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="30.0" prefWidth="84.0" text="Reset" />
+      <Button fx:id="btnAdd" layoutX="44.0" layoutY="144.0" mnemonicParsing="false" onAction="#btnAddtOnAction" prefHeight="30.0" prefWidth="84.0" text="Add" />
+      <Button fx:id="btnDelete" layoutX="335.0" layoutY="144.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="84.0" text="Delete" />
+      <Button fx:id="btnUpdate" layoutX="186.0" layoutY="144.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="84.0" text="Update" />
+      <TextField fx:id="txtRoomId" layoutX="22.0" layoutY="61.0" prefHeight="25.0" prefWidth="172.0" promptText="roomid" />
+      <TextField fx:id="txtCustomerId" layoutX="205.0" layoutY="61.0" prefHeight="25.0" prefWidth="172.0" promptText="customerid" />
+      <TextField fx:id="txtCustomerName" layoutX="385.0" layoutY="61.0" prefHeight="25.0" prefWidth="172.0" promptText="customername" />
+      <TextField fx:id="txtCustomerphonenumber" layoutX="205.0" layoutY="103.0" prefHeight="25.0" prefWidth="172.0" promptText="customerphonenumber" />
    </children>
 </AnchorPane>

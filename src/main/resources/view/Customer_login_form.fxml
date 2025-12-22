@@ -22,8 +22,8 @@
           <Font name="System Bold" size="17.0" />
         </font>
     </Label>
-    <TextField fx:id="txtName" layoutX="167.0" layoutY="109.0" prefHeight="25.0" prefWidth="232.0" />
-    <TextField fx:id="txtPhoneNumber" layoutX="170.0" layoutY="189.0" prefHeight="25.0" prefWidth="238.0" />
+    <TextField fx:id="txtName" layoutX="167.0" layoutY="109.0" prefHeight="25.0" prefWidth="232.0" promptText="customername" />
+    <TextField fx:id="txtPhoneNumber" layoutX="170.0" layoutY="189.0" prefHeight="25.0" prefWidth="238.0" promptText="phone number" />
     <Button fx:id="btnLogin" layoutX="233.0" layoutY="280.0" mnemonicParsing="false" onAction="#binLoginOnAction" prefHeight="36.0" prefWidth="82.0" text="login">
         <font>
           <Font name="System Bold" size="15.0" />
