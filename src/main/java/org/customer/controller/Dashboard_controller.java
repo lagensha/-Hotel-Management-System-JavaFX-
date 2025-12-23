@@ -12,7 +12,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Dashboard_controller {
- Stage stage=new Stage();
+    public Button btnStaff;
+    Stage stage=new Stage();
     @FXML
     private Button btnCustomer_Login;
 
@@ -25,7 +26,7 @@ public class Dashboard_controller {
     @FXML
     void btnCustomerLoginOnAction(ActionEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Customer_login_form.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/customerdetailsform.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -35,7 +36,7 @@ public class Dashboard_controller {
     @FXML
     void btnRoomDetailOnAction(ActionEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/RoomDetails_form.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/roomdetails.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -52,4 +53,12 @@ public class Dashboard_controller {
         stage.show();
     }
 
+    public void btnStaffLoginOnAction(ActionEvent actionEvent) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/staffDetails.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+    }
 }

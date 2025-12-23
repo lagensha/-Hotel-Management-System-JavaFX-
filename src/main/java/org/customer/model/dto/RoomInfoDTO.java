@@ -3,8 +3,16 @@ package org.customer.model.dto;
 public class RoomInfoDTO {
     private String roomId;
     private String customerId;
-    private String customerName;
+    private double Price;
     private String customerPhoneNumber;
+
+    public double getPrice() {
+        return Price;
+    }
+
+    public void setPrice(double price) {
+        Price = price;
+    }
 
     public String getRoomId() {
         return roomId;
@@ -22,13 +30,6 @@ public class RoomInfoDTO {
         this.customerId = customerId;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
 
     public String getCustomerPhoneNumber() {
         return customerPhoneNumber;
@@ -38,10 +39,10 @@ public class RoomInfoDTO {
         this.customerPhoneNumber = customerPhoneNumber;
     }
 
-    public RoomInfoDTO(String roomId, String customerId, String customerName, String customerPhoneNumber) {
+    public RoomInfoDTO(String roomId, String customerId, double price, String customerPhoneNumber) {
         this.roomId = roomId;
         this.customerId = customerId;
-        this.customerName = customerName;
+        Price = price;
         this.customerPhoneNumber = customerPhoneNumber;
     }
 
@@ -50,7 +51,7 @@ public class RoomInfoDTO {
         return "RoomInfoDTO{" +
                 "roomId='" + roomId + '\'' +
                 ", customerId='" + customerId + '\'' +
-                ", customerName='" + customerName + '\'' +
+                ", Price=" + Price +
                 ", customerPhoneNumber='" + customerPhoneNumber + '\'' +
                 '}';
     }

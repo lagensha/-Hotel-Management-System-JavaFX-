@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="424.0" prefWidth="707.0" style="-fx-background-color: #FFA239;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.customer.controller.StaffDetails_controller">
+   <children>
+      <Label layoutX="187.0" layoutY="14.0" text="Staff Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="383.0" fitWidth="232.0" layoutX="-6.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/hotel.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtStaffId" layoutX="270.0" layoutY="67.0" onAction="#txtStaffIdOnAction" promptText="staff_id" />
+      <TextField fx:id="txtName" layoutX="499.0" layoutY="67.0" onAction="#txtNameOnAction" promptText="Name" />
+      <TextField fx:id="txtRole" layoutX="270.0" layoutY="108.0" onAction="#txtRoleOnAction" promptText="Role" />
+      <TextField fx:id="txtEmail" layoutX="499.0" layoutY="108.0" onAction="#txtEmailOnAction" promptText="Email" />
+      <TextField fx:id="txtPhoneNumber" layoutX="270.0" layoutY="147.0" onAction="#txtPhoneNumberOnAction" promptText="Phone Number" />
+      <Button fx:id="btnAdd" layoutX="268.0" layoutY="188.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="25.0" prefWidth="55.0" text="Add" />
+      <Button fx:id="btnUpdate" layoutX="360.0" layoutY="188.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
+      <Button fx:id="btnDelete" layoutX="463.0" layoutY="188.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
+      <Button fx:id="btnReset" layoutX="574.0" layoutY="188.0" mnemonicParsing="false" onAction="#btnResetOnAction" text="Reset" />
+      <TableView fx:id="tblStaffinfo" layoutX="237.0" layoutY="224.0" prefHeight="200.0" prefWidth="483.0">
+        <columns>
+          <TableColumn fx:id="colStaffId" prefWidth="75.0" text="Staff Id" />
+          <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="colRole" prefWidth="75.0" text="Role" />
+            <TableColumn fx:id="colEmail" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="95.5" text="Phone Number" />
+            <TableColumn fx:id="colSalary" prefWidth="86.5" text="Salary" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtSalary" layoutX="499.0" layoutY="147.0" onAction="#txtSalaryOnAction" promptText="Salary" />
+   </children>
+</AnchorPane>

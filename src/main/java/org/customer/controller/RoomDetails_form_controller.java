@@ -16,40 +16,93 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RoomDetails_form_controller implements Initializable {
-    public Button btnAdd;
-    public Button btnDelete;
-    public Button btnUpdate;
-    public TextField txtRoomId;
-    public TextField txtCustomerId;
-    public TextField customerphonenumber;
-    public TextField txtCustomerName;
-    public TextField txtCustomerphonenumber;
-    ObservableList<RoomInfoDTO>roomInfoDTOS = FXCollections.observableArrayList(
-            new RoomInfoDTO("R0001","C0001","Kamala Perera","0774655146"),
-            new RoomInfoDTO("R0002","C0002","Vimala Sumanasinghe","0776845123"),
-            new RoomInfoDTO("R0003","C0003","Lily Geheragama","0709923145"),
-            new RoomInfoDTO("R0004","C0004","Nimal Amarasekara","0777904324")
+    ObservableList<RoomInfoDTO> roomInfoDTOS = FXCollections.observableArrayList(
+            new RoomInfoDTO("R0001", "C0001", 70000.00, "0774655146"),
+            new RoomInfoDTO("R0002", "C0002", 67000.00, "0776845123"),
+            new RoomInfoDTO("R0003", "C0003", 55000.00, "0709923145"),
+            new RoomInfoDTO("R0004", "C0004", 90000.00, "0777904324")
     );
+
+    public TableColumn colRoomId;
+    public TableColumn colCustomerId;
+    public TableColumn colCustomerPhoneNumber;
+    public TableColumn colPrice;
     @FXML
-    private Button btnRest;
+    private Button btnAdd;
 
     @FXML
-    private TableColumn<?, ?> colCustomerId;
+    private Button btnDelete;
 
     @FXML
-    private TableColumn<?, ?> colCustomerName;
+    private Button btnReset;
 
     @FXML
-    private TableColumn<?, ?> colPhoneNumber;
-
-    @FXML
-    private TableColumn<?, ?> colRoomId;
+    private Button btnUpdate;
 
     @FXML
     private TableView<RoomInfoDTO> tblRoomDetails;
 
     @FXML
-    void btnResetOnAction(ActionEvent event) {
+    private TextField txtCustomerPhonenumber;
+
+    @FXML
+    private TextField txtPrice;
+
+    @FXML
+    private TextField txtcustomerId;
+
+    @FXML
+    private TextField txtroomId;
+
+
+    @FXML
+    void btnAddOnAction(ActionEvent event) {
+        String roomId=txtroomId.getText();
+        String customerId=txtcustomerId.getText();
+        String customerPhoneNumber=txtCustomerPhonenumber.getText();
+        double price=Double.parseDouble(txtPrice.getText());
+
+        RoomInfoDTO roominfoDTO=new RoomInfoDTO(roomId,customerId,price,customerPhoneNumber);
+        roomInfoDTOS.add(roominfoDTO);
+        clearText();
+
+    }
+
+    @FXML
+    void btnDeleteOnAction(ActionEvent event) {
+        RoomInfoDTO deletRoomInfoDTO=tblRoomDetails.getSelectionModel().getSelectedItem();
+        roomInfoDTOS.remove(deletRoomInfoDTO);
+    }
+
+    @FXML
+    void btnUpdateOnAction(ActionEvent event) {
+        RoomInfoDTO updateRoomInfoDTO=tblRoomDetails.getSelectionModel().getSelectedItem();
+
+        updateRoomInfoDTO.setRoomId(txtroomId.getText());
+        updateRoomInfoDTO.setCustomerId(txtcustomerId.getText());
+       updateRoomInfoDTO.setPrice(Double.parseDouble(txtPrice.getText()));
+        updateRoomInfoDTO.setCustomerPhoneNumber(txtCustomerPhonenumber.getText());
+        tblRoomDetails.refresh();
+        clearText();
+    }
+
+    @FXML
+    void txtCustomerPhonenumberOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void txtPriceOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void txtcustomerIdOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void txtroomIdOnAction(ActionEvent event) {
 
     }
 
@@ -57,18 +110,30 @@ public class RoomDetails_form_controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
         colCustomerId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-        colCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
-        colPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("customerPhoneNumber"));
-
+        colCustomerPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("customerPhoneNumber"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
         tblRoomDetails.setItems(roomInfoDTOS);
+
+        tblRoomDetails.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) ->{
+            if (newValue != null){
+                txtroomId.setText(newValue.getRoomId());
+                txtcustomerId.setText(newValue.getCustomerId());
+                txtCustomerPhonenumber.setText(newValue.getCustomerPhoneNumber());
+                txtPrice.setText(String.valueOf(newValue.getPrice()));
+            }
+        });
+
+
     }
 
-    public void btnAddtOnAction(ActionEvent actionEvent) {
+    public void btnResetOnAction(ActionEvent actionEvent) {
+        clearText();
     }
-
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    public  void clearText(){
+        txtcustomerId.clear();
+        txtroomId.clear();
+        txtCustomerPhonenumber.clear();
+        txtPrice.clear();
     }
 }
+
